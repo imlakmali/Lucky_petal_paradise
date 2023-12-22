@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+:root{
+    --white-alpha-40: rgba(255,255,255,0.40);
+    --white-alpha-25: rgba(255,255,255,0.25);
+    --backdrop-filter-blur: blur(5px);
+    --pink:#e84393;
+    box-shadow: 0.5rem 1rem rgba(0,0,0,0.1);
+}
+.message{
+    text-align: center;
+    margin: 2rem auto;
+    font-size: 20px;
+    background: var(--pink);
+    color: #fff;
+    width: 50vw;
+    padding: 1rem;
+    border-radius: 5px
+}
+.message i{
+    cursor: pointer;
+    float: right;
+}
+a{
+    text-decoration: none;
+}
+.form-container{
+    background-image:url(img/687812.jpg) ;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form-container form{
+    width: 50vw;
+    height: auto;
+    margin: 0 auto;
+    padding: 2rem;
+    background: var(--white-alpha-25);
+    border: 1px solid var(--white-alpha-40);
+    backdrop-filter: var(--backdrop-filter-blur);
+}
+form input,textarea{
+    width: 100%;
+    background: var(--white-alpha-25);
+    padding: .7rem 1.4rem;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    margin: .5rem 0;
+    padding-left: .5rem;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.40);
+    font-size: 14px;
+}
+form .btn{
+    cursor: pointer;
+    background: #545bba;
+    color: #fff;
+    text-transform:uppercase ;
+}
+form .btn:hover{
+    background: transparent;
+    border: 2px solid var(--pink);
+    color: var(--pink);
+}
+.form-container h3{
+    text-align: center;
+    text-transform: uppercase;
+    color: #545bba;
+    margin: 1rem;
+}
