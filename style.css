@@ -77,7 +77,7 @@ form .btn:hover{
     margin: 1rem;
 }
 
-/*----------admin header-------------*/
+/* --------admin header--------- */
 header{
     background: #fff;
     width: 100%;
@@ -85,16 +85,14 @@ header{
     box-shadow: var(--box-shadow);
     position: sticky;
     z-index: 1000;
-
 }
 .flex{
     max-width: 1200px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position:relative;
-    margin: 0 auto;
-
+    position: relative;
+    margin:0 auto;
 }
 .logo{
     font-size: 1.5rem;
@@ -107,7 +105,7 @@ header{
 
 }
 .navbar a{
-    margin: 0 1rem;
+    margin:0 1rem;
     font-size: 1rem;
     color: #aa4ff3;
     text-transform: uppercase;
@@ -129,47 +127,18 @@ header{
 
 }
 .header .user-box{
-    position: absolute;
-    top: 150%;
-    right: -10%;
-    width: 18rem;
-    padding: .7rem 1rem;
-    background: #fff;
-    box-shadow: var(--box-shadow);
-    border-radius: 5px;
-    text-transform: capitalize;
-    color: #555;
-    font-size: 12px;
-    display: none;
-    transition: .5s;
+   position: absolute;
+   top: 150%;
+   right: -10%;
+   width: 17rem;
+   padding: .7rem 1rem;
 }
+
 .header .user-box.active{
     display: block;
-}
-.header .user-box span{
-    text-transform: capitalize;
-    color: #aa4ff3;
-    font-size: 14px;
-
-}
-.logout-btn{
-    background: #c7b3f555;
-    width:14rem ;
-    height: 40px;
-    padding: 0;
-    cursor: pointer;
-    color: #aa4ff3;
-    border-radius: 5px;
-    border: none;
-    outline: none;
-    margin: 0 auto;
-    margin-top: 1rem; 
-}
-
-/* -------------media screen-------------- */
-@media(max-width: 991px){
-    #menu-btn{
-        display: block;
+    }
+.header .user-box.active{
+    display: block;
     }
     .header .flex{
         position: absolute;
@@ -181,8 +150,14 @@ header{
         transition: .3s ease;
         clip-path: polygon(0 0,100% 0,100% 0,0 0);
 
-    }
-    .header .flex .navbar.active{
-        clip-path: polygon(0 0,100% 0,100% 100%,0 100%);
-    }
 }
+    .header .flex{
+        position: absolute;
+        top: 149%;
+        left: 0;
+        right: 0;
+        border-top: 1px solid #aa4ff3;
+        background: #fff;
+        transition: .3s ease;
+        clip-path: polygon(0 0,100% 0,100% 0,0 0);
+    }
