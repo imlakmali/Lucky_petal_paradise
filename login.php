@@ -37,6 +37,7 @@ if (isset($_POST['submit-btn'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@1.10.2/font/bootstrap-icon.css">
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>user registration page</title>
 </head>

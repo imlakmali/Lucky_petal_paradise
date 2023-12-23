@@ -2,7 +2,7 @@
     include 'connection.php';
     session_start();
 
-    $admin_id = $_SESSION['user_id'];
+    $user_id = $_SESSION['user_id'];
     if(!isset($user_id)){
         header('location:login.php');
     }

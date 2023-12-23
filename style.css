@@ -76,3 +76,113 @@ form .btn:hover{
     color: #545bba;
     margin: 1rem;
 }
+
+/*----------admin header-------------*/
+header{
+    background: #fff;
+    width: 100%;
+    padding: 1rem 0;
+    box-shadow: var(--box-shadow);
+    position: sticky;
+    z-index: 1000;
+
+}
+.flex{
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position:relative;
+    margin: 0 auto;
+
+}
+.logo{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #aa4ff3;
+
+}
+.logo span{
+    color: #e382c5;
+
+}
+.navbar a{
+    margin: 0 1rem;
+    font-size: 1rem;
+    color: #aa4ff3;
+    text-transform: uppercase;
+
+}
+.navbar a:hover,
+.header .icons i:hover{
+    color: #c7b3f5;
+
+}
+.header .icons i{
+    margin-left: 1.2rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #aa4ff3;
+}
+#menu-btn{
+    display: none;
+
+}
+.header .user-box{
+    position: absolute;
+    top: 150%;
+    right: -10%;
+    width: 18rem;
+    padding: .7rem 1rem;
+    background: #fff;
+    box-shadow: var(--box-shadow);
+    border-radius: 5px;
+    text-transform: capitalize;
+    color: #555;
+    font-size: 12px;
+    display: none;
+    transition: .5s;
+}
+.header .user-box.active{
+    display: block;
+}
+.header .user-box span{
+    text-transform: capitalize;
+    color: #aa4ff3;
+    font-size: 14px;
+
+}
+.logout-btn{
+    background: #c7b3f555;
+    width:14rem ;
+    height: 40px;
+    padding: 0;
+    cursor: pointer;
+    color: #aa4ff3;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    margin: 0 auto;
+    margin-top: 1rem; 
+}
+
+/* -------------media screen-------------- */
+@media(max-width: 991px){
+    #menu-btn{
+        display: block;
+    }
+    .header .flex{
+        position: absolute;
+        top: 149%;
+        left: 0;
+        right: 0;
+        border-top: 1px solid #aa4ff3;
+        background: #fff;
+        transition: .3s ease;
+        clip-path: polygon(0 0,100% 0,100% 0,0 0);
+
+    }
+    .header .flex .navbar.active{
+        clip-path: polygon(0 0,100% 0,100% 100%,0 100%);
+    }
+}
