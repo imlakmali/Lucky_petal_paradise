@@ -22,12 +22,13 @@
                 <a href="admin_message.php">Message</a>
 
             </nav>
-        </div>
-        <div class="icons">
+            <div class="icons">
             <i class="fa-solid fa-list" id="menu-btn"></i>
             <i class="fa-solid fa-user" id="user-btn"></i>
        
         </div>
+        </div>
+        
         <div class="user-box">
 
             <p>username : <span><?php echo $_SESSION['admin_name']; ?></span></p>

@@ -92,6 +92,7 @@ header {
   justify-content: space-between;
   align-items: center;
   position: relative;
+  
   margin: 0 auto;
 }
 .logo {
@@ -112,8 +113,9 @@ header {
 .header .icons i:hover {
   color: #c7b3f5;
 }
-.header .icons{
+ .header .icons{
     display: flex;
+   
 }
 .header .icons i {
   margin-left: 1.2rem;
@@ -127,22 +129,22 @@ header {
 .header .user-box {
   position: absolute;
   top: 150%;
-  right: -10%;
-  width: 18rem;
-  padding: .7rem 1rem;
+  right: -2%;
+  width: 15rem;
+  padding: .5rem 0.2rem;
   background: #fff;
   box-shadow: var(--box-shadow);
   border-radius: 5px;
   text-transform: capitalize;
   color: #555;
-  font-size: 12px;
+  font-size: 10px;
   display: none;   
   transition: 0.5s;
 }
 .header .user-box.active {
   display: block;
 }
-.header .user-box span {
+.header .user-box span{
   text-transform: capitalize;
   color: #aa4ff3;
   font-size: 14px;
@@ -162,7 +164,7 @@ header {
 
 }
 /* ---------media screen----------- */
-@media(max-width: 991px){
+ @media(max-width: 991px){
     #menu-btn{
         display: block;
     }
@@ -179,9 +181,9 @@ header {
     .header .flex .navbar.active{
         clip-path: polygon(0 0,100% 0,100% 100%,0 100%);
     }
+    .header .flex .navbar a{
+      display: block;
+      margin: 2rem;
+    }
 }
-.header .flex .navbar a{
-    display: flex;
-    margin: 2rem;
-
-}
+ 
