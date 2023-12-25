@@ -33,7 +33,7 @@ if(isset($_POST['logout'])){
                     $select_pendings = mysqli_query($conn, "SELECT * FROM `orders` WHERE payment_status ='pending' ")
                         or die('query failed');
                     while ($fetch_pendings = mysqli_fetch_assoc($select_pendings)) {
-                        $total_pendings += $fetch_pendings['total_price'];           //me tika sudammagen aha ganna
+                        $total_pendings += $fetch_pendings['total_price'];           
                 }
                 ?>
                     <h3>$ <?php echo $total_pendings; ?></h3>
@@ -45,7 +45,7 @@ if(isset($_POST['logout'])){
                     $select_completed = mysqli_query($conn, "SELECT * FROM `orders` WHERE payment_status ='completed' ")
                         or die('query failed');
                     while ($fetch_completed = mysqli_fetch_assoc($select_completed)) {
-                        $total_completed += $fetch_completed['total_price'];           //me tika sudammagen aha ganna
+                        $total_completed += $fetch_completed['total_price'];           
                     }
                 ?>
                     <h3>$ <?php echo $total_completed; ?></h3>
@@ -61,7 +61,7 @@ if(isset($_POST['logout'])){
             </div>
             <div class="box">
                 <?php
-                    $select_products = mysqli_query($conn, "SELECT * FROM `orders` ") or die('query failed');
+                    $select_products = mysqli_query($conn, "SELECT * FROM `products` ") or die('query failed');
                     $num_of_products = mysqli_num_rows($select_products);
                 ?>
                     <h3> <?php echo $num_of_products; ?></h3>
