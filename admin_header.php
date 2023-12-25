@@ -23,25 +23,20 @@
 
             </nav>
             <div class="icons">
-            <i class="fa-solid fa-list" id="menu-btn"></i>
-            <i class="fa-solid fa-user" id="user-btn"></i>
-       
+                <i class="fa-solid fa-list" id="menu-btn"></i>
+                <i class="fa-solid fa-user" id="user-btn"></i>
+
+            </div>
+            <div class="user-box">
+
+                <p>username : <span><?php echo $_SESSION['admin_name']; ?></span></p>
+                <p>email : <span><?php echo $_SESSION['admin_email']; ?></span></p>
+
+                <form method="post" class="logout">
+                    <button name="logout" class="logout-btn">LOG OUT</button>
+                </form>
+            </div>
         </div>
-        </div>
-        
-        <div class="user-box">
-
-            <p>username : <span><?php echo $_SESSION['admin_name']; ?></span></p>
-            <p>email : <span><?php echo $_SESSION['admin_email']; ?></span></p>
-
-            <form method="post" class="logout">
-
-                <button name="logout" class="logout-btn">LOG OUT</button>
-
-
-            </form>
-        </div>
-
     </Header>
 
 </body>
