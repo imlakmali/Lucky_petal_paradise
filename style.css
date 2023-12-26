@@ -197,7 +197,28 @@ header {
   text-transform: uppercase;
   margin: 1rem 0;
 }
-
+/* -------------add product page--------------------- */
+.add-products{
+  background-image: url('img/admin\ panel\ background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.add-products form{
+  width: 50vw;
+  margin: 2rem auto;
+  background: #fff;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  border: 1px solid #fef0ea;
+  background: var(--white-alpha-40);
+}
+.add-products form label{
+  text-transform: capitalize;
+  color: var(--pink);
+}
+.add-products form textarea{
+  height: 200px;
+}
 /* ---------media screen----------- */
  @media(max-width: 991px){
     #menu-btn{
