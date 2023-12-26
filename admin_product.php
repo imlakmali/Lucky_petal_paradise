@@ -25,8 +25,8 @@ if(isset($_POST['add_product'])){
         if(mysqli_num_rows($select_product_name)>0){
             $message[] = 'product name already exist';
         }else{
-            $insert_product = mysqli_query($conn, "INSERT INTO `products`(`name`, `price`, `product_delail`, `image`)
-            VALUES('$product_name', '$product_price', '$product_detail', '$image')") 
+            $insert_product = mysqli_query($conn, "INSERT INTO products(`name`, `price`, `product_detail`, `image`) 
+            VALUES ('$product_name','$product_price','$product_detail','$image');") 
                 or die('query failed 2');
 
             if($insert_product){
@@ -40,7 +40,9 @@ if(isset($_POST['add_product'])){
         }
 
 }
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -87,6 +89,10 @@ if(isset($_POST['add_product'])){
             </div>
             <input type="submit" name="add_product" value="add product" class="btn">
         </form>
+    </section>
+    <!---------------show product section-------------->
+    <section>
+        
     </section>
  <script type="text/javascript" src="script.js"></script>
 </body>

@@ -27,8 +27,8 @@
 a {
   text-decoration: none;
 }
-.form-container {
-  background-image: url(img/687812.jpg);
+.form-container{
+  background-image:url(image/rose_flower_purple_139995_1920x1080.jpg);
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -85,8 +85,6 @@ header {
   box-shadow: var(--box-shadow);
   position: sticky;
   z-index: 1000;
-  
-  
 }
 .flex {
   max-width: 1200px;
@@ -95,7 +93,6 @@ header {
   align-items: center;
   position: relative;
   margin: 0 auto;
-  
 }
 .logo {
   font-size: 1.5rem;
@@ -117,7 +114,6 @@ header {
 }
  .header .icons{
     display: flex;
-   
 }
 .header .icons i{
   margin-left: 1.2rem;
@@ -163,7 +159,6 @@ header {
     outline: none;
     margin:0 auto;
     margin-top: 1rem;
-
 }
 .title{
   text-align: center;
@@ -177,7 +172,6 @@ header {
   grid-template-columns: repeat(auto-fit,minmax(15rem,1fr));
   justify-content: center;
   align-items: center;
-
 }
 .box-container .box{
   box-shadow: var(--box-shadow);
