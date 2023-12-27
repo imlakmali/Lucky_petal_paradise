@@ -11,81 +11,38 @@ if (isset($_POST['logout'])) {
     header('location:login.php');
 }
 // -----adding products to database-------
-if (isset($_POST['add_product'])) {
+if(isset($_POST['add_product'])){
     $product_name = mysqli_real_escape_string($conn, $_POST['name']);
     $product_price = mysqli_real_escape_string($conn, $_POST['price']);
     $product_detail = mysqli_real_escape_string($conn, $_POST['detail']);
-    $image = $_FILES['image']['name'];
+
+    // File details
+    $image_name = $_FILES['image']['name'];
     $image_size = $_FILES['image']['size'];
     $image_tmp_name = $_FILES['image']['tmp_name'];
-    $image_folder = 'image/' . $image;
+    $image_folder = 'image/'.$image;
 
     $select_product_name = mysqli_query($conn, "SELECT name FROM `products`WHERE name = '$product_name'")
         or die('query failed1');
-    if (mysqli_num_rows($select_product_name) > 0) {
-        $message[] = 'product name already exist';
-    } else {
-        $insert_product = mysqli_query($conn, "INSERT INTO products(`name`, `price`, `product_detail`, `image`) 
-            VALUES ('$product_name','$product_price','$product_detail','$image');")
-            or die('query failed 2');
+        if(mysqli_num_rows($select_product_name)>0){
+            $message[] = 'product name already exist';
+        }else{
+            $insert_product = mysqli_query($conn, "INSERT INTO `products`(`name`, `price`, `product_delail`, `image`)
+            VALUES('$product_name', '$product_price', '$product_detail', '$image')") 
+                or die('query failed 2');
 
-        if ($insert_product) {
-            if ($image_size > 2000000) {
-                $message[] = 'product image size is too large';
-            } else {
-                move_uploaded_file($image_tmp_name, $image_folder);
-                $message[] = 'product added successfully';
+            if($insert_product){
+                if($image_size > 2000000){
+                    $message[] = 'product image size is too large';
+                }else{
+                    move_uploaded_file($image_tmp_name, $image_folder);
+                    $message[] = 'product added successfully'; 
+                }
             }
         }
-    }
+
 }
-// -----deleting products to database-------
-if (isset($_GET['delete'])) {
-    $delete_id = $_GET['delete'];
-    $select_delete_image = mysqli_query($conn, "SELECT image FROM `products` WHERE id = $delete_id")
-        or die('query failed 3');
-    $fetch_delete_image = mysqli_fetch_assoc($select_delete_image);
-    unlink('image/' . $fetch_delete_image['image']);
-
-    mysqli_query($conn, "DELETE FROM `products` WHERE id = '$delete_id'") or die('query failed 4');
-    mysqli_query($conn, "DELETE FROM `cart` WHERE id = '$delete_id'") or die('query failed 5');
-    mysqli_query($conn, "DELETE FROM `wishlist` WHERE id = '$delete_id'") or die('query failed 6');
-
-    header('location:admin_product.php');
-}
-
-// --------update_products-------------
-if(isset($_POST['update_product'])){
-    $update_p_id = $_POST['update_p_id'];
-    $update_p_name = $_POST['update_p_name'];
-    $update_p_price = $_POST['update_p_price'];
-    $update_p_detail = $_POST['update_p_detail'];
-    $update_p_img = $_FILES['update_p_image']['name'];
-    $update_p_image_tmp_name = $_FILES['update_p_image']['tmp_name'];
-    $update_p_image_folder ='image/'.$update_p_img;
-
-    // Sanitize the inputs to prevent SQL injection
-    $update_p_id = mysqli_real_escape_string($conn, $update_p_id);
-    $update_p_name = mysqli_real_escape_string($conn, $update_p_name);
-    $update_p_price = mysqli_real_escape_string($conn, $update_p_price);
-    $update_p_detail = mysqli_real_escape_string($conn, $update_p_detail);
-
-    $update_query = mysqli_query($conn, "UPDATE `products` SET  name= '$update_p_name',
-        price= '$update_p_price', product_detail= '$update_p_detail',image= '$update_p_img' WHERE id= '$update_p_id'")
-        or die('query failed 7');
-
-if($update_query){
-    move_uploaded_file($update_p_image_tmp_name, $update_p_image_folder);
-    $message[]='product update successfully';
-    header('location:admin_product.php');
-    exit();
-}else{
-    $message[]= 'product could not update successfully';
-}
-}
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
