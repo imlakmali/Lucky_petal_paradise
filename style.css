@@ -28,7 +28,7 @@ a {
   text-decoration: none;
 }
 .form-container{
-  background-image:url(image/rose_flower_purple_139995_1920x1080.jpg);
+  background-image:url(img/rose_flower_purple_139995_1920x1080.jpg);
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -192,13 +192,14 @@ header {
   margin: 1rem 0;
 }
 /* -------------add product page--------------------- */
-.add-products{
-  background-image: url('img/admin\ panel\ background.jpg');
+.add-products,
+.show-products{
+  background-image: url('img/pexels-ylanite-koppens-776653.jpg');
   background-size: cover;
   background-repeat: no-repeat;
 }
 .add-products form{
-  width: 40vw;
+  width: 50vw;
   margin: 2rem auto;
   background: #fff;
   padding: 1rem 2rem;
@@ -207,12 +208,50 @@ header {
   background: var(--white-alpha-40);
 }
 .add-products form label{
-  text-transform: capitalize;
+  text-transform:uppercase;
   color: var(--pink);
 }
 .add-products form textarea{
   height: 200px;
 }
+.show-products .box-container{
+  grid-template-columns: repeat(auto-fit, minmax(25rem,1fr));
+ 
+}
+.show-products .box-container .box{
+  background: #F6D6D7;
+  
+}
+
+
+.edit, .delete{
+  margin: .5rem;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--pink);
+  padding: .5rem 2rem;
+  border-radius: 5px;
+}
+.edit:hover, .delete:hover{
+  color: var(--pink);
+  background: transparent;
+  border: 2px solid var(--pink);
+}
+.show-products .box .detail{
+  font-size: 13px;
+  text-transform:capitalize;
+  
+}
+.show-products .box img{
+  width: 80%;
+}
+.show-products .box h4{
+  text-transform: uppercase;
+}
+
+
+
+
 /* ---------media screen----------- */
  @media(max-width: 991px){
     #menu-btn{

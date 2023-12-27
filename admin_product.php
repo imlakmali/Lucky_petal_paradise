@@ -15,7 +15,7 @@ if(isset($_POST['add_product'])){
     $product_name = mysqli_real_escape_string($conn, $_POST['name']);
     $product_price = mysqli_real_escape_string($conn, $_POST['price']);
     $product_detail = mysqli_real_escape_string($conn, $_POST['detail']);
-    $image = $_FILES['image']['name'];
+    $image = $_FILES['image'][ 'name'];
     $image_size = $_FILES['image']['size'];
     $image_tmp_name = $_FILES['image']['tmp_name'];
     $image_folder = 'image/'.$image;
@@ -91,10 +91,32 @@ if(isset($_POST['add_product'])){
         </form>
     </section>
     <!---------------show product section-------------->
-    <section>
-        
+    <section class="show-products">
+        <div class="box-container">
+            <?php
+            $select_products = mysqli_query($conn, "SELECT * FROM `products`")
+                or die('query failed');
+            if (mysqli_num_rows($select_products) > 0) {
+                while ($fetch_products = mysqli_fetch_assoc($select_products)) {
+
+
+            ?>
+                    <div class="box">
+                        <img src="image/<?php echo $fetch_products['image']; ?>">
+                        <p>price : Rs <?php echo $fetch_products['price']; ?></p>
+                        <h4><?php echo $fetch_products['name']; ?></h4>
+                        <p class="detail"> <?php echo $fetch_products['product_detail']; ?></p>
+                        <a href="admin_product.php?edit=<?php echo $fetch_products['id']?>" class="edit">edit</a>
+                        <a href="admin_product.php?delet=<?php echo $fetch_products['id']?>" class="delete" 
+                            oneclick = "return conform('delete this product');">delete</a>
+                    </div>
+            <?php                                                                  // therun na chuttak wath.
+                }
+            }
+            ?>
+        </div>
     </section>
- <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="script.js"></script>
 </body>
 
 </html>
