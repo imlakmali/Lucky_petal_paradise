@@ -134,7 +134,7 @@ if (isset($_GET['delete'])) {
                             <p class="detail"> <?php echo $fetch_products['product_detail']; ?></p>
                             <a href="admin_product.php?edit=<?php echo $fetch_products['id'] ?>" class="edit">edit</a>
                             <a href="admin_product.php?delete=<?php echo $fetch_products['id'] ?>" class="delete" 
-                                onclick="return confirm('delete this product');">delete</a>
+                                >delete</a>
                         </div>
             <?php
                     }
