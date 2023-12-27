@@ -152,4 +152,3 @@ if(isset($_POST['add_product'])){
 </html>
 
 
-<!--later______ check the cancel button its not working -->
