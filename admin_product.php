@@ -56,7 +56,7 @@ if (isset($_GET['delete'])) {
 
     if ($fetch_delete_image) {
         $image_to_delete = 'image/' . $fetch_delete_image['image'];
-        unlink($image_to_delete); // Delete the image file
+        
 
         mysqli_query($conn, "DELETE FROM `products` WHERE id= '$delete_id' ") 
             or die('Query failed to delete product');
