@@ -133,7 +133,8 @@ if (isset($_GET['delete'])) {
                             <h4><?php echo $fetch_products['name']; ?></h4>
                             <p class="detail"> <?php echo $fetch_products['product_detail']; ?></p>
                             <a href="admin_product.php?edit=<?php echo $fetch_products['id'] ?>" class="edit">edit</a>
-                            <a href="admin_product.php?delete=<?php echo $fetch_products['id'] ?>" class="delete" >delete</a>
+                            <a href="admin_product.php?delete=<?php echo $fetch_products['id'] ?>" class="delete" 
+                                onclick="return confirm('delete this product');">delete</a>
                         </div>
             <?php
                     }
@@ -142,7 +143,7 @@ if (isset($_GET['delete'])) {
             ?>
         </div>
     </section>
-    <!--------- edit product-------------->
+    <!--------- edit (uptate) product-------------->
     <section class="update-container">
         <?php
         if (isset($_GET['edit'])) {
@@ -168,7 +169,7 @@ if (isset($_GET['delete'])) {
                 }
             }
             echo "<script>document.querySelector('.update-container').style.display='block';</script>";
-        }
+         }
         ?>
 
     </section>
