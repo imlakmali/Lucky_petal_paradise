@@ -12,6 +12,29 @@ if (isset($_POST['logout'])) {
     header('location:login.php');
     exit();
 }
+/*-------------deleting order detail from database------------*/ 
+if (isset($_GET['delete'])) {
+    $delete_id = $_GET['delete'];
+    
+        mysqli_query($conn, "DELETE FROM `orders` WHERE id = '$delete_id' ") 
+            or die('Query failed to delete wishlist items related to the product');
+        
+        header('location:admin_orders.php');
+    
+
+}
+/*-------------update order detail ------------*/ 
+if(isset($_POST['update_order'])){
+    $order_id = $_POST['order_id'];
+    $update_payment = $_POST['update_payment'];
+
+    mysqli_query($conn,"UPDATE `orders` SET payment_status = '$update_payment' WHERE id='$order_id' ")
+        or die('query failed');
+        $message[]='payment ststus update successfully';
+
+}
+
+
 ?>
 
 
@@ -60,6 +83,19 @@ if (isset($_POST['logout'])) {
                         <p>method: <span><?php echo $fetch_orders['method']; ?></span></p>
                         <p>address: <span><?php echo $fetch_orders['address']; ?></span></p>
                         <p>total product: <span><?php echo $fetch_orders['total_product']; ?></span></p>
+
+                        <form method="post">
+                            <input type="hidden" name="order_id" value="<?php echo $fetch_orders['id']; ?>">
+                            <select name="update_payment">
+                                <option disabled selected><?php echo $fetch_orders['payment_status'];?></option>
+                                <option value="pending">pending</option>
+                                <option value="completed">completed</option>
+                            </select>
+                            <input type="submit" name="update_order" value="update order" class="btn">
+                            <a href="admin_orders.php?delete=<?php echo $fetch_orders['id']; ?>" class="delete"
+                            onclick="return confirm('delete this')">delete</a>
+
+                        </form>
                     </div>
             <?php
                 }

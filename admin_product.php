@@ -64,9 +64,33 @@ if (isset($_GET['delete'])) {
             or die('Query failed to delete cart items related to the product');
         mysqli_query($conn, "DELETE FROM `wishlist` WHERE pid = '$delete_id' ") 
             or die('Query failed to delete wishlist items related to the product');
-    } 
-}
+        
+        header('location:admin_product.php');
+    }
 
+}
+/*----------update product to database-------------*/ 
+if(isset($_POST['update_product'])){
+    $update_p_id = $_POST['update_p_id'];
+    $update_p_name = $_POST['update_p_name'];
+    $update_p_price = $_POST['update_p_price'];
+    $update_p_detail = $_POST['update_p_detail'];
+    $update_p_img = $_FILES['update_p_image']['name'];
+    $update_p_image_tmp_name = $_FILES['update_p_image']['tmp_name'];
+    $update_p_image_folder = 'image/'.$update_p_img;
+
+    $update_query = mysqli_query($conn, "UPDATE `products` SET id ='$update_p_id',name = '$update_p_name', price='$update_p_price',product_detail ='$update_p_detail',image= '$update_p_img' WHERE id = '$update_p_id'")
+        or die('query failed --->update');
+
+    if($update_query){
+        move_uploaded_file($update_p_image_tmp_name, $update_p_image_folder);
+        $message[] = 'product update successflly';
+        header('location:admin_product.php');
+    }else{
+        $message[] = 'product could not update successflly';
+    }
+
+}
 
 ?>
 <!DOCTYPE html>
@@ -147,7 +171,8 @@ if (isset($_GET['delete'])) {
     <section class="update-container">
         <?php
         if (isset($_GET['edit'])) {
-            $edit_id = mysqli_real_escape_string($conn, $_GET['edit']);
+            $edit_id = $_GET['edit'];
+            $_SESSION["edit"]=$edit_id;
             $edit_query = mysqli_query($conn, "SELECT * FROM `products` WHERE id= $edit_id")
                 or die('query failed 7');
             if (mysqli_num_rows($edit_query) > 0) {

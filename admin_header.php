@@ -17,7 +17,7 @@
 
                 <a href="admin.php">Home</a>
                 <a href="admin_product.php">Products</a>
-                <a href="admin_order.php">Orders</a>
+                <a href="admin_orders.php">Orders</a>
                 <a href="admin_user.php">Users</a>
                 <a href="admin_message.php">Message</a>
 
