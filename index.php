@@ -13,21 +13,27 @@ if (isset($_POST['add_to_wishlist'])) {
     $product_price = $_POST['product_price'];
     $product_image = $_POST['product_image'];
 
+    // Retrieve counts for wishlist and cart
+    $select_wishlist = mysqli_query($conn, "SELECT * FROM `wishlist` WHERE user_id = '$user_id'")
+        or die('wishlist query failed');
+    $wishlist_num_rows = mysqli_num_rows($select_wishlist);
 
-    $wishlist_number = mysqli_query($conn, "SELECT * FROM `wishlist` WHERE name = '$product_name' AND user_id = '$user_id'")
-        or die('query failed 2');
+    $select_cart = mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id = '$user_id'")
+        or die('cart query failed');
+    $cart_num_rows = mysqli_num_rows($select_cart);  
 
-    $cart_number = mysqli_query($conn, "SELECT * FROM `cart` WHERE name = '$product_name' AND user_id = '$user_id'")
-        or die('query failed 3');
-    if (mysqli_num_rows($wishlist_number) > 0) {
-        $message[] = 'product already exist in wishlist';
-    } else if (mysqli_num_rows($cart_number) > 0) {
-        $message[] = 'product already exist in cart';
+    // Check if the product already exists in wishlist or cart
+    if ($wishlist_num_rows > 0) {
+        $message[] = 'product already exists in wishlist';
+    } else if ($cart_num_rows > 0) {
+        $message[] = 'product already exists in cart';
     } else {
-        mysqli_query($conn, "INSERT INTO `wishlist`(`user_id`,`pid`,`name`,`price`,`image`)VALUES ('$user_id','product_id','product_name','product_price','product_image')");
-        $message[] = 'product successfully added in wishlist';
+        // Insert product into wishlist
+        mysqli_query($conn, "INSERT INTO `wishlist`(`user_id`, `pid`, `name`, `price`, `image`) VALUES ('$user_id', '$product_id', '$product_name', '$product_price', '$product_image')");
+        $message[] = 'product successfully added to wishlist';
     }
 }
+
 
 /*-----------adding products to cart-------------------*/
 if (isset($_POST['add_to_cart'])) {
@@ -42,7 +48,7 @@ if (isset($_POST['add_to_cart'])) {
     if (mysqli_num_rows($cart_number) > 0) {
         $message[] = 'product already exist in cart';
     } else {
-        mysqli_query($conn, "INSERT INTO `cart`(`user_id`,`pid`,`name`,`price`,`image`)VALUES ('$user_id','product_id','product_name','product_price','product_image')");
+        mysqli_query($conn, "INSERT INTO `cart`(`user_id`,`pid`,`name`,`price`,`image`)VALUES ('$user_id','$product_id','$product_name','$product_price','$product_image')");
         $message[] = 'product successfully added in cart';
     }
 }
@@ -61,10 +67,7 @@ if (isset($_POST['add_to_cart'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  </head>
-  <body>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Lucky Petal Paradise</title>
 </head>
 
@@ -175,8 +178,9 @@ if (isset($_POST['add_to_cart'])) {
                         <input type="hidden" name="product_image" value="<?php echo $fetch_products['image']; ?>">
                         <div class="icon">
                             <a href="view_page.php?pid = <?php echo $fetch_products['id']; ?>" class="fa-regular fa-face-smile-beam"></a>
-                            <button type="submit" name="add_to_wishlist" class="fa-solid fa-heart-pulse"></button>
+                            <button type="submit" name="add_to_wishlist" class="fa-solid fa-heart"></button>
                             <button type="submit" name="add_to_cart" class="fa-solid fa-cart-arrow-down"></button>
+                            
                         </div>
                     </form>
 
