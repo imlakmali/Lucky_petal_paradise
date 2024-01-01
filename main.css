@@ -542,6 +542,67 @@ position: relative;
   padding: .5rem 2rem;
   border: 1px solid #fff;
 }
+.shop .box{
+  position: relative;
+}
+.price{
+  font-size: 18px;
+}
+.name{
+  font-size: 20px;
+  color: var(--pink);
+  margin: 0.5rem;
+  text-transform: capitalize;
+}
+.shop .icon{
+  position: absolute;
+  right: 3%;
+  top:30% ;
+  display: flex;
+  flex-direction: column;
+  background: var(--white-alpha-40);
+  visibility:hidden ;
+
+}
+.shop .box:hover .icon{
+  visibility: visible;
+}
+.shop .icon a,
+.shop .icon button{
+  margin: 0.2rem 0;
+  padding: 0.3rem;
+  border: 1px solid #ececec;
+  color:gray;
+}
+.shop img{
+  width: 100%;
+}
+.shop .more{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  text-align: center;
+  margin: 0.5rem auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: gray;
+  border: 1px solid gray;
+}
+.shop .more a{
+  margin-bottom: 0.6rem;
+  color: gray;
+  text-transform: capitalize;
+}
+.shop .more a:hover{
+  color: var(--pink);
+}
+.shop .more a:hover{
+  border: 1px solid var(--pink);
+  color: var(--pink);
+}
+
 
   /* ---------media screen----------- */
  @media(max-width: 991px){

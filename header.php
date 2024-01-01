@@ -22,6 +22,7 @@
             </nav>
             <div class="icons">
                 <i class="fa-solid fa-list" id="menu-btn"></i>
+                
                 <i class="fa-solid fa-user" id="user-btn"></i>
 
             </div>
