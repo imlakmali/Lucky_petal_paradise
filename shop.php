@@ -14,20 +14,18 @@ if (isset($_POST['add_to_wishlist'])) {
     $product_image = $_POST['product_image'];
 
     // Retrieve counts for wishlist and cart
-    $wishlist_number = mysqli_query($conn, "SELECT * FROM `wishlist` WHERE name ='$product_name'  AND user_id = '$user_id'")
+    $select_wishlist = mysqli_query($conn, "SELECT * FROM `wishlist` WHERE name ='$product_name'  AND user_id = '$user_id'")
         or die('wishlist query failed');
+    $wishlist_num_rows = mysqli_num_rows($select_wishlist);
 
-    // $wishlist_num_rows = mysqli_num_rows($select_wishlist);
-
-    $cart_number = mysqli_query($conn, "SELECT * FROM `cart` WHERE name ='$product_name'  AND user_id = '$user_id'")
+    $select_cart = mysqli_query($conn, "SELECT * FROM `cart` WHERE name ='$product_name'  AND user_id = '$user_id'")
         or die('cart query failed');
-
-    // $cart_num_rows = mysqli_num_rows($select_cart);  
+    $cart_num_rows = mysqli_num_rows($select_cart);  
 
     // Check if the product already exists in wishlist or cart
-    if (mysqli_num_rows($wishlist_number) > 0) {
+    if ($wishlist_num_rows > 0) {
         $message[] = 'product already exists in wishlist';
-    } else if (mysqli_num_rows($cart_number) > 0) {
+    } else if ($cart_num_rows > 0) {
         $message[] = 'product already exists in cart';
     } else {
         // Insert product into wishlist
@@ -75,76 +73,10 @@ if (isset($_POST['add_to_cart'])) {
 
 <body>
     <?php include 'header.php'; ?>
-    <div class="slide-section">
-        <div class="slide-show-container">
-            <div class="wrapper-one">
-                <div class="wrapper-text">inspired by nature</div>
-            </div>
-            <div class="wrapper-two">
-                <div class="wrapper-text">fresh flower for you</div>
-            </div>
-            <div class="wrapper-three">
-                <div class="wrapper-text">inspired by nature</div>
-            </div>
-        </div>
-    </div>
+    <div class="banner">
+        <h1>our shop</h1>
+        <p>Lorem ipsum dolor sit </p>
 
-
-    <div class="row">
-        <div class="card">
-            <div class="detail">
-                <span>30% OFF TODAY</span>
-                <h1>simple & elegant</h1>
-                <a href="shop.php">shop now</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="detail">
-                <span>30% OFF TODAY</span>
-                <h1>simple & elegant</h1>
-                <a href="shop.php">shop now</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="detail">
-                <span>30% OFF TODAY</span>
-                <h1>simple & elegant</h1>
-                <a href="shop.php">shop now</a>
-            </div>
-        </div>
-    </div>
-    <div class="categories">
-        <h1 class="title">TOP CATEGORIES</h1>
-        <div class="box-container">
-            <div class="box">
-                <img src="img/pexels-dids-2317874.jpg">
-                <span>birthday</span>
-            </div>
-            <div class="box">
-                <img src="img/pexels-dids-2317874.jpg">
-                <span>next day</span>
-            </div>
-            <div class="box">
-                <img src="img/pexels-dids-2317874.jpg">
-                <span>plant</span>
-            </div>
-            <div class="box">
-                <img src="img/pexels-dids-2317874.jpg">
-                <span>wedding</span>
-            </div>
-            <div class="box">
-                <img src="img/pexels-dids-2317874.jpg">
-                <span>sympathy</span>
-            </div>
-        </div>
-    </div>
-    <div class="banner3">
-        <div class="detail">
-            <span>BETTER THAN CAKE</span>
-            <h1>BIRTHAY BOUQS</h1>
-            <p>believe in birthday magic ? (you will.)celebrate with party-ready blooms!</p>
-            <a href="shop.php">explore<i class="bi bi-arrow-bar-right"></i></a>
-        </div>
     </div>
     <div class="shop">
         <h1 class="title">shop best sellers</h1>
@@ -195,10 +127,7 @@ if (isset($_POST['add_to_cart'])) {
             ?>
 
         </div>
-        <div class="more">
-            <a href="shop.php">load more</a>
-            <i class="fa-solid fa-arrow-down-short-wide"></i>
-        </div>
+        
     </div>
     <?php include 'footer.php'; ?>
 </body>

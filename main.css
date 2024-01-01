@@ -603,6 +603,66 @@ position: relative;
   color: var(--pink);
 }
 
+.banner{
+  width: 100%;
+  height: 500px;
+  background-image: url(img/pexels-vo-tien-935039.jpg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+.banner h1{
+  font-size: 3rem;
+  position: relative;
+  text-transform: capitalize;
+}
+.banner p{
+  font-size: 18px;
+}
+/* --------view page css-------- */
+.view-page{
+  padding: 5% 8%;
+}
+.view-page form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.view-page  form img{
+  width: 50%;
+}
+.view-page form .name{
+  font-size: 3rem;
+  color: var(--pink);
+}
+.view-page form .detail,
+.view-page form .price{
+  font-size: 18px;
+  color: gray;
+  line-height: 2;
+}
+.view-page form .price{
+  font-size: 24px;
+}
+.view-page form .quantity{
+  width: 60%;
+  box-shadow: none;
+  border: 1px solid var(--pink);
+  border-radius: 0;
+  margin-top: 1rem;
+}
+.view-page button{
+  background: var(--pink);
+  color: #fff;
+  margin-top: 1rem;
+  padding: 0.8rem 1rem;
+}
+
+
+
+
 
   /* ---------media screen----------- */
  @media(max-width: 991px){
