@@ -22,7 +22,18 @@
             </nav>
             <div class="icons">
                 <i class="fa-solid fa-list" id="menu-btn"></i>
-                
+                    <?php
+                        $select_wishlist= mysqli_query($conn, "SELECT * FROM `wishlist` WHERE user_id = '$user_id'")
+                            or die('query failed 1');
+                        $wishlist_num_rows = mysqli_num_rows($select_wishlist);
+                    ?>
+                    <a href="wishlist.php"><i class="fa-solid fa-heart-pulse"><span>(<?php echo $wishlist_num_rows; ?>)</span></i></a>
+                    <?php
+                        $select_cart= mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id = '$user_id'")
+                            or die('query failed 1');
+                        $cart_num_rows = mysqli_num_rows($select_cart);
+                    ?>
+                    <a href="cart.php"><i class="fa-solid fa-cart-arrow-down"><span>(<?php echo $cart_num_rows; ?>)</span></i></a>
                 <i class="fa-solid fa-user" id="user-btn"></i>
 
             </div>
