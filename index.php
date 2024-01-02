@@ -6,7 +6,8 @@ $user_id = $_SESSION['user_id'];
 if (!isset($user_id)) {
     header('location:login.php');
 }
-/*-----------adding products to wishlist------------*/ /*****************/
+/*-----------adding products to wishlist------------*/
+/*****************/
 if (isset($_POST['add_to_wishlist'])) {
     $product_id = $_POST['product_id'];
     $product_name = $_POST['product_name'];
@@ -37,20 +38,21 @@ if (isset($_POST['add_to_wishlist'])) {
 }
 
 
-/*-------adding products to cart---------*/  /*****************/
+/*-------adding products to cart---------*/
+/*****************/
 if (isset($_POST['add_to_cart'])) {
     $product_id = $_POST['product_id'];
     $product_name = $_POST['product_name'];
     $product_price = $_POST['product_price'];
     $product_image = $_POST['product_image'];
-
+    $product_quantity = 1;
 
     $cart_number = mysqli_query($conn, "SELECT * FROM `cart` WHERE name = '$product_name' AND user_id = '$user_id'")
         or die('query failed 3');
     if (mysqli_num_rows($cart_number) > 0) {
         $message[] = 'product already exist in cart';
-    } else{
-        mysqli_query($conn, "INSERT INTO `cart`(`user_id`,`pid`,`name`,`price`,`image`)VALUES ('$user_id','$product_id','$product_name','$product_price','$product_image')");
+    } else {
+        mysqli_query($conn, "INSERT INTO `cart`(`user_id`,`pid`,`name`,`price`,`quantity`,`image`)VALUES ('$user_id','$product_id','$product_name','$product_price','$product_quantity','$product_image')");
         $message[] = 'product successfully added in cart';
     }
 }
@@ -69,7 +71,7 @@ if (isset($_POST['add_to_cart'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer"   />
     <title>Lucky Petal Paradise</title>
 </head>
 
@@ -168,7 +170,7 @@ if (isset($_POST['add_to_cart'])) {
             if (mysqli_num_rows($select_products) > 0) {
                 while ($fetch_products = mysqli_fetch_assoc($select_products)) {
 
-                    
+
             ?>
                     <form action="" method="post" class="box">
                         <img src="image/<?php echo $fetch_products['image']; ?>">
@@ -182,7 +184,7 @@ if (isset($_POST['add_to_cart'])) {
                             <a href="view_page.php?pid=<?php echo $fetch_products['id']; ?>" class="fa-solid fa-eye"></a>
                             <button type="submit" name="add_to_wishlist" class="fa-solid fa-heart"></button>
                             <button type="submit" name="add_to_cart" class="fa-solid fa-cart-arrow-down"></button>
-                            
+
                         </div>
                     </form>
 
