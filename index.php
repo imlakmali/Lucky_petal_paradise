@@ -6,7 +6,7 @@ $user_id = $_SESSION['user_id'];
 if (!isset($user_id)) {
     header('location:login.php');
 }
-/*-----------adding products to wishlist-------------------*/
+/*-----------adding products to wishlist------------*/ /*****************/
 if (isset($_POST['add_to_wishlist'])) {
     $product_id = $_POST['product_id'];
     $product_name = $_POST['product_name'];
@@ -37,7 +37,7 @@ if (isset($_POST['add_to_wishlist'])) {
 }
 
 
-/*-----------adding products to cart-------------------*/
+/*-------adding products to cart---------*/  /*****************/
 if (isset($_POST['add_to_cart'])) {
     $product_id = $_POST['product_id'];
     $product_name = $_POST['product_name'];
@@ -49,7 +49,7 @@ if (isset($_POST['add_to_cart'])) {
         or die('query failed 3');
     if (mysqli_num_rows($cart_number) > 0) {
         $message[] = 'product already exist in cart';
-    } else {
+    } else{
         mysqli_query($conn, "INSERT INTO `cart`(`user_id`,`pid`,`name`,`price`,`image`)VALUES ('$user_id','$product_id','$product_name','$product_price','$product_image')");
         $message[] = 'product successfully added in cart';
     }
@@ -168,7 +168,7 @@ if (isset($_POST['add_to_cart'])) {
             if (mysqli_num_rows($select_products) > 0) {
                 while ($fetch_products = mysqli_fetch_assoc($select_products)) {
 
-
+                    
             ?>
                     <form action="" method="post" class="box">
                         <img src="image/<?php echo $fetch_products['image']; ?>">
@@ -179,7 +179,7 @@ if (isset($_POST['add_to_cart'])) {
                         <input type="hidden" name="product_price" value="<?php echo $fetch_products['price']; ?>">
                         <input type="hidden" name="product_image" value="<?php echo $fetch_products['image']; ?>">
                         <div class="icon">
-                            <a href="view_page.php?pid = <?php echo $fetch_products['id']; ?>" class="fa-solid fa-eye"></a>
+                            <a href="view_page.php?pid=<?php echo $fetch_products['id']; ?>" class="fa-solid fa-eye"></a>
                             <button type="submit" name="add_to_wishlist" class="fa-solid fa-heart"></button>
                             <button type="submit" name="add_to_cart" class="fa-solid fa-cart-arrow-down"></button>
                             

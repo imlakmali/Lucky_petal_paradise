@@ -485,6 +485,7 @@ position: relative;
 .row .card:nth-child(3){
   background: url(image/Ray-of-Sunshine-Yellow-Rose-Bouquet.png);
 }
+/* ---categories section---- */
 .categories{
   padding-bottom: 3%;
 }
@@ -572,7 +573,7 @@ position: relative;
   margin: 0.2rem 0;
   padding: 0.3rem;
   border: 1px solid #ececec;
-  color:gray;
+  color:rgb(75, 77, 148);
 }
 .shop img{
   width: 100%;
@@ -592,7 +593,7 @@ position: relative;
 }
 .shop .more a{
   margin-bottom: 0.6rem;
-  color: gray;
+  color: var(--pink);
   text-transform: capitalize;
 }
 .shop .more a:hover{
@@ -660,6 +661,38 @@ position: relative;
   padding: 0.8rem 1rem;
 }
 
+/* ---------wishlist page----------- */
+.disabled{
+  pointer-events: none;
+  opacity: 0.5;
+}
+.wishlist_total{
+  max-width: 1200px;
+  box-shadow: var(--box-shadow);
+  margin: 2rem auto;
+  border: 1px solid gainsboro;
+  text-align: center;
+  padding: 3rem 0;
+  line-height: 2;
+  text-transform: capitalize;
+}
+.wishlist_total p{
+  font-size: 1.5rem;
+}.wishlist_total a{
+  text-transform: capitalize;
+  font-size: 16px;
+  margin-right: 2rem;
+}
+.qty{
+  display: flex;
+  justify-content: space-between;
+}
+.qty input[type='number']{
+  width: 35%;
+}
+.qty input[type='submit']{
+  width: 55%;
+}
 
 
 
