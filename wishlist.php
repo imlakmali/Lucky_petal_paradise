@@ -76,9 +76,9 @@ if (isset($_GET['delete_all'])) {
             ?>
                     <form action="" method="post" class="box">
                         <div class="icon">
-                            <a href="wishlist.php?delete=<?php echo $fetch_wishlist['id']; ?>" class="fa-solid fa-eye-x"></a>
+                            <a href="wishlist.php?delete=<?php echo $fetch_wishlist['id']; ?>" class="fa-regular fa-x"></a>
                             <a href=" view_page.php?pid=<?php echo $fetch_wishlist['id']; ?>" class="fa-solid fa-eye"></a>
-                        </div>
+                        </div>                                                      
                         <img src="image/<?php echo $fetch_wishlist['image']; ?>">
                         <div class="price">Rs<?php echo $fetch_wishlist['price']; ?>/-</div>
                         <div class="name"><?php echo $fetch_wishlist['name']; ?></div>
@@ -94,7 +94,7 @@ if (isset($_GET['delete_all'])) {
                     $grand_total += $fetch_wishlist['price'];
                 }
             } else {
-                echo '<img src = ""img/empty.webp>';
+                echo '<img src = "img/empty-animation1">';
             }
 
             ?>
@@ -109,4 +109,4 @@ if (isset($_GET['delete_all'])) {
     <?php include 'footer.php'; ?>
 </body>
 
-</html>
+</html> 
