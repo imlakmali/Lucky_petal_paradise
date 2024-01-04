@@ -132,6 +132,7 @@ if (isset($_POST['add_to_cart'])) {
         
     </div>
     <?php include 'footer.php'; ?>
+    <script type="text/javascript" src="script.js"></script>
 </body>
 
 </html>

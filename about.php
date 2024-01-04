@@ -128,32 +128,32 @@ if (!isset($user_id)) {
         <h1 class="title">what people say</h1>
         <div class="container">
             <div class="testimonial-item active">
-                <img src="img/">
+                <img src="im/pexels-tuğba-dönmez-12243855.jpg">
                 <h3>lakmali koralage</h3>
                 <p>Lorem ipsum dolor sit amet consectetur 
                     adipisicing elit. Reprehenderit, recusandae?</p>
 
             </div>
             <div class="testimonial-item">
-                <img src="img/">
-                <h3>lakmali koralage</h3>
+                <img src="im/pexels-teona-swift-6913175.jpg">
+                <h3>mahinda mahaththaya</h3>
                 <p>Lorem ipsum dolor sit amet consectetur 
                     adipisicing elit. Reprehenderit, recusandae?</p>
 
             </div>
             <div class="testimonial-item">
-                <img src="img/">
-                <h3>lakmali koralage</h3>
+                <img src="im/pexels-teona-swift-6913122.jpg">
+                <h3>vikumsiri</h3>
                 <p>Lorem ipsum dolor sit amet consectetur 
                     adipisicing elit. Reprehenderit, recusandae?</p>
 
             </div>
-            <div class="left-arrow"><i class="fa-solid fa-arrow-left-long"></i></div>
-            <div class="right-arrow"><i class="fa-solid fa-arrow-right-long"></i></div>
+            <div class="left-arrow" onclick="nextSlide();"><i class="fa-solid fa-arrow-left-long"></i></div>
+            <div class="right-arrow" onclick="prevSlide();"><i class="fa-solid fa-arrow-right-long"></i></div>
         </div>
     </div>
     <?php include 'footer.php'; ?>
-    
+    <script type="text/javascript" src="script.js"></script>    
 </body>
 
 </html>

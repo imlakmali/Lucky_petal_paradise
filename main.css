@@ -875,11 +875,62 @@ position: relative;
   text-align: center;
 }
 .right-arrow{
-  margin: 3rem;
+  right: 3rem;
 }
 .left-arrow{
   margin: 3rem;
 }
+
+/* ---------contact section----------- */
+.help{
+  padding: 5% 0;
+}
+.box-container .box h2{
+  font-size: 1.2rem;
+  color: var(--pink);
+  text-transform: uppercase;
+  margin: 0.5rem 0;
+}
+.box-container .box p{
+  font-size: 18px;
+  color: gray;
+  margin: 1rem 0;
+}
+.box-container .box img{
+  width: 30%;
+}
+.form-container{
+  background-image:url(img/pexels-nothing-ahead-7169402.jpg) ;
+  background-position: center;
+  background-attachment: fixed;
+}
+.form-container .form-section{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 6%;
+  padding-bottom: 5%;
+}
+.form-container .form-section form{
+  width: 50vw;
+  background: var(--white-alpha-25);
+  box-shadow: var(--box-shadow);
+  padding: 2rem;
+  border-radius: 10px;
+  backdrop-filter: var(--backdrop-filter-blur);
+}
+.form-container .form-section form h1{
+  text-align: center;
+  color: var(--pink);
+  margin: 1rem 0;
+}
+.form-container .form-section form p{
+  text-align: center;
+  color: gray;
+}
+
+
+
+
   /* ---------media screen----------- */
  @media(max-width: 991px){
     #menu-btn{
