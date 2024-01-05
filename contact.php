@@ -6,8 +6,23 @@ $user_id = $_SESSION['user_id'];
 if (!isset($user_id)) {
     header('location:login.php');
 }
-
-
+/*----------send message--------------*/ 
+if(isset($_POST['submit-btn'])){
+    $name = mysqli_real_escape_string($conn, $_POST['name']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $number = mysqli_real_escape_string($conn, $_POST['number']);
+    $message = mysqli_real_escape_string($conn, $_POST['message']);
+    
+    $select_message = mysqli_query($conn , "SELECT * FROM `message` WHERE name='$name' AND email='$email' AND number='$number' AND message = '$message'")
+        or die('message query failed');
+    if(mysqli_num_rows($select_message)>0){
+        echo 'message already send';
+    }else{
+        mysqli_query($conn,"INSERT INTO `message`(`user_id`,`name`,`email`,`number`,`message`) VALUE('$user_id','$name','$email','$number','$message')")or 
+        die('query failed');
+    }
+    
+}
 ?>
 
 
@@ -83,7 +98,7 @@ if (!isset($user_id)) {
                 </div>
                 <div class="input-field">
                     <label>message</label>
-                    <textarea></textarea>
+                    <textarea name="message"></textarea>
                 </div>
                 <input type="submit" name="submit-btn" class="btn" value="send message">
             </form>
