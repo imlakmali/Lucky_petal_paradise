@@ -56,10 +56,9 @@ if (!isset($user_id)) {
         <h1 class="title">our services</h1>
         <div class="box-container">
             <div class="box">
-                <i class="fa-solid fa-percent"></i>
+            <i class="fa-solid fa-percent"></i>
                 <h3>30% OFF +FREE SHIPPING</h3>
-                <p>starting at Rs1000/- mo plus,get Rs 2500 creditlayer
-                    on reguler orders
+                <p>starting at Rs1000/- mo plus
                 </p>
             </div>
             <div class="box">

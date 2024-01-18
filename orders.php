@@ -33,7 +33,7 @@ if (!isset($user_id)) {
     <div class="order-section">
         <div class="box-container">
             <?php
-            $select_orders = mysqli_query($conn, "SELECT * FROM `orders`WHERE user_id = '$user_id'")
+            $select_orders = mysqli_query($conn, "SELECT * FROM `orders` WHERE user_id= '$user_id'")
                 or die('order query failed');
 
             if (mysqli_num_rows($select_orders) > 0) {
@@ -41,7 +41,7 @@ if (!isset($user_id)) {
 
 
             ?>
-            <!-- database ekata add wen na -->
+            
                     <div class="box">
                         <p>placed on : <span><?php echo $fetch_orders['placed_on'] ?></span></p>
                         <p>name : <span><?php echo $fetch_orders['name'] ?></span></p>

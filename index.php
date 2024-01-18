@@ -6,8 +6,9 @@ $user_id = $_SESSION['user_id'];
 if (!isset($user_id)) {
     header('location:login.php');
 }
-/*-----------adding products to wishlist------------*/
 
+
+/*-----------adding products to wishlist------------*/
 if (isset($_POST['add_to_wishlist'])) {
     $product_id = $_POST['product_id'];
     $product_name = $_POST['product_name'];
@@ -120,23 +121,23 @@ if (isset($_POST['add_to_cart'])) {
         <h1 class="title">TOP CATEGORIES</h1>
         <div class="box-container">
             <div class="box">
-                <img src="img/pexels-dids-2317874.jpg">
+                <img src="img/TOP CATEGORIES1.jpg">
                 <span>birthday</span>
             </div>
             <div class="box">
-                <img src="img/pexels-dids-2317874.jpg">
+                <img src="img/TOP CATEGORIES2.jpg">
                 <span>next day</span>
             </div>
             <div class="box">
-                <img src="img/pexels-dids-2317874.jpg">
+                <img src="img/TOP CATEGORIES4.jpg">
                 <span>plant</span>
             </div>
             <div class="box">
-                <img src="img/pexels-dids-2317874.jpg">
+                <img src="img/TOP CATEGORIES5.jpg">
                 <span>wedding</span>
             </div>
             <div class="box">
-                <img src="img/pexels-dids-2317874.jpg">
+                <img src="img/TOP CATEGORIES6.jpg">
                 <span>sympathy</span>
             </div>
         </div>

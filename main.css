@@ -241,8 +241,8 @@
   padding: 8%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items:center;
+  justify-content:left;
   text-align: center;
   background-image:url(img/pexels-min-an-906150.jpg);
   background-size: cover;
@@ -260,7 +260,7 @@
   margin-bottom: 2rem;
  }
 .footer{
-  background: url(img/pexels-moose-photos-1037994.jpg);
+  background: url(img/footer.jpg);
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -341,11 +341,11 @@ position: relative;
   width: 50px;
   height: 50px;
   line-height: 50px;
-  text-align: center;
+  text-align:center;
   border: 1px solid var(--pink);
   color: var(--pink);
   cursor: pointer;
-  padding: 0.6rem;
+  padding: 0.1rem;
   margin: 0.3rem 0;
   border-radius: 50%;
 }
@@ -382,11 +382,11 @@ position: relative;
   text-transform: capitalize;
 }
 .wrapper-one{
-  background-image: url(img/couple-flowers-gift.jpg);
+  background-image: url(img/inspired\ by\ nature2.jpg);
   
 }
 .wrapper-two{
-  background-image: url(img/pexels-t-munive-3404200.jpg);
+  background-image: url(img/freshflowerfor\ you.jpg);
   animation: slideTwoAnim 20s infinite;
 }
 .wrapper-three{
@@ -476,14 +476,16 @@ position: relative;
   color: #fff;
 }
 .row .card:nth-child(1){
-  background: url(image/image_processing20210222-4-5e9o5c.jpg);
+  background: url(img/indexpage5.jpg);
   background-size: cover;
 }
 .row .card:nth-child(2){
-  background: url(image/rose\ low\ resalution.jpeg);
+  background: url(img/indexpage9.jpg);
+  background-size: cover;
 }
 .row .card:nth-child(3){
-  background: url(image/Ray-of-Sunshine-Yellow-Rose-Bouquet.png);
+  background: url(img/indexpage7.jpg);
+  background-size: cover;
 }
 /* ---categories section---- */
 .categories{
@@ -517,7 +519,7 @@ position: relative;
 }
 /* ---------banner3----------- */
 .banner3{
-  background-image: url(img/pexels-vo-tien-935039.jpg);
+  background-image: url(img/banner3image.jpg);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -608,7 +610,8 @@ position: relative;
 .banner-2{
   width: 100%;
   height: 500px;
-  background-image: url(img/pexels-vo-tien-935039.jpg);
+  background-image: url(img/banner.jpg);
+  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -666,7 +669,7 @@ position: relative;
 .disabled{
   pointer-events: none;
   opacity: 0.5;
-}
+}                                                    
 .wishlist_total{
   max-width: 1200px;
   box-shadow: var(--box-shadow);
@@ -733,11 +736,12 @@ position: relative;
   color: var(--pink);
 }
 .banner-2{       
-  background-image: url(img/pexels-terje-sollie-313707\ \(1\).jpg);
+  background-image: url(img/wedding4.jpg);
   background-size: cover;
 }
 .banner-2 h1{
   padding-bottom: 1.5rem;
+  color: #fdfefe;
 }
 .banner-2 .btn2{
   border: 1px solis #fff;
@@ -746,23 +750,23 @@ position: relative;
 .services,
 .stylist,
 .testimonial-container{
-  background: url(img/pexels-valeria-boltneva-617967.jpg);
+  background: url(img/services10.jpg);
   background-size: cover;
   width: 100%;
   height: 100vh;
-  padding: 8% 0;
+  padding: 0.1rem 0;
 }
 .services .box-container,
 .stylist .box-container{
-  grid-template-columns:repeat(auto-fit, minmax(25rem,1fr)) ;
+  grid-template-columns:repeat(auto-fit, minmax(15rem,0.5fr)) ;
 }
 .services .box-container .box{
-  padding: 2rem 1rem;
+  padding: 1rem 1rem;
   line-height: 2;
 }
 .services .box-container .box h3{
   margin-top: 2rem;
-  color: gray;
+  color: rgb(207, 202, 202);
 }
 .services .box-container .box hi{
   font-size: 2rem;
@@ -774,7 +778,8 @@ position: relative;
   text-align: center;
 }
 .stylist{
-  background: url(img/pexels-michelle-leman-6765584.jpg);
+  background: url(img/background\ f\ ff.jpg);
+  background-size: cover;
   padding: 4% 0;
   height:auto ;
 }

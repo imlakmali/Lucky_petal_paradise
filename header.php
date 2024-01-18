@@ -44,7 +44,7 @@
                 <p>username : <span><?php echo $_SESSION['user_name']; ?></span></p>
                 <p>email : <span><?php echo $_SESSION['user_email']; ?></span></p>
 
-                <form method="post" class="logout">
+                <form action="index.php" method="post" class="logout">
                     <button name="logout" class="logout-btn">LOG OUT</button>
                 </form>
             </div>
